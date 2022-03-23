@@ -27,10 +27,128 @@
   </div>
 </div>
 
+<hr />
+
+<div class="row text-center">
+  <div class="col-12 col-lg-4">
+    <div class="form-group mb-3">
+      <label ngbTooltip="Incorporar botón de cierre a la alerta">
+        closeButton
+      </label>
+      <br />
+      <ui-switch [(ngModel)]="closeButton">
+      </ui-switch>
+    </div>
+  </div>
+  <div class="col-12 col-lg-4">
+    <div class="form-group mb-3">
+      <label ngbTooltip="Tiempo por el cual mostrar la alerta, en [ms]">
+        timeOut
+      </label>
+      <input type="number" class="form-control" [(ngModel)]="timeOut" min="0" max="20000" step="100"/>
+    </div>
+  </div>
+  <div class="col-12 col-lg-4">
+    <div class="form-group mb-3">
+      <label ngbTooltip="Tiempo extendido para mostrar la alerta luego de pasar el mouse, en [ms]">
+        extendedTimeOut
+      </label>
+      <input type="number" class="form-control" [(ngModel)]="extendedTimeOut" min="0" max="20000" step="100"/>
+    </div>
+  </div>
+  <div class="col-12 col-lg-4">
+    <div class="form-group mb-3">
+      <label ngbTooltip="Deshabilitar tiempo para mostrar la alerta">
+        disableTimeOut
+      </label>
+      <br/>
+      <ui-switch [(ngModel)]="disableTimeOut"></ui-switch>
+    </div>
+  </div>
+  <div class="col-12 col-lg-4">
+    <div class="form-group mb-3">
+      <label ngbTooltip="Efecto de animación de la alerta">
+        easing
+      </label>
+      <select class="form-control" [(ngModel)]="easingType">
+        <option *ngFor="let eType of easingTypes" [value]="eType">
+          {{eType}}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="col-12 col-lg-4">
+    <div class="form-group mb-3">
+      <label ngbTooltip="Tiempo de animación de la alerta">
+        easeTime
+      </label>
+      <input type="number" class="form-control" [(ngModel)]="easeTime" min="0" max="20000" step="100"/>
+    </div>
+  </div>
+  <div class="col-12 col-lg-4">
+    <div class="form-group mb-3">
+      <label ngbTooltip="Mostrar barra de progreso">
+        progressBar
+      </label>
+      <br/>
+      <ui-switch [(ngModel)]="progressBar"></ui-switch>
+    </div>
+  </div>
+  <div class="col-12 col-lg-4">
+    <div class="form-group mb-3">
+      <label ngbTooltip="Clase de la alerta (toast)">
+        toastClass
+      </label>
+      <input type="text" class="form-control" [(ngModel)]="toastClass" disabled/>
+    </div>
+  </div>
+  <div class="col-12 col-lg-4">
+    <div class="form-group mb-3">
+      <label ngbTooltip="Clase de posición de la alerta">
+        positionClass
+      </label>
+      <select class="form-control" [(ngModel)]="positionClass">
+        <option *ngFor="let tPosition of toastPositions" [value]="tPosition">
+          {{tPosition}}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="col-12 col-lg-4">
+    <div class="form-group mb-3">
+      <label ngbTooltip="Clase de título del título de la alerta">
+        titleClass
+      </label>
+      <input type="text" class="form-control" [(ngModel)]="titleClass" disabled/>
+    </div>
+  </div>
+  <div class="col-12 col-lg-4">
+    <div class="form-group mb-3">
+      <label ngbTooltip="Clase de título del mensaje de la alerta">
+        messageClass
+      </label>
+      <input type="text" class="form-control" [(ngModel)]="messageClass" disabled/>
+    </div>
+  </div>
+  <div class="col-12 col-lg-4">
+    <div class="form-group mb-3">
+      <label ngbTooltip="Habilita o deshabilita hacer click a la alera para desaparecerla">
+        tapToDismiss
+      </label>
+      <br/>
+      <ui-switch [(ngModel)]="tapToDismiss"></ui-switch>
+    </div>
+  </div>
+</div>
+
 <hr/>
 
 <div class="d-grid">
   <button class="btn btn-primary" (click)="openAlert()">
     Abrir alerta
+  </button>
+  <br/>
+  <button class="btn btn-danger" (click)="resetDefault()">
+    Resetear a condiciones por defecto
   </button>
 </div>

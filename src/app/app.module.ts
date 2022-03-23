@@ -23,7 +23,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     UiSwitchModule.forRoot({
       size: 'small',
       checkedLabel: 'Si',
-      uncheckedLabel: 'No'
+      uncheckedLabel: 'No',
+      checkedTextColor: '#fff'
     }),
     NgbModule
   ],
