@@ -8,8 +8,44 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class LayoutComponent implements OnInit {
 
-  constructor() { }
+  alertTypes = ['success', 'warning', 'error', 'info'];
 
-  ngOnInit(): void {}
+  alertType = 'success';
+  title = 'Título';
+  message = 'Mensaje';
+
+  constructor(
+    private toastr: ToastrService
+  ) { }
+
+  ngOnInit(): void {
+
+  }
+
+  openAlert(): void {
+    switch (this.alertType) {
+      case 'success': {
+        this.toastr.success(this.message, this.title);
+        break;
+      }
+
+      case 'warning': {
+        this.toastr.warning(this.message, this.title);
+        break;
+      }
+
+      case 'error': {
+        this.toastr.error(this.message, this.title);
+        break;
+      }
+
+      case 'info': {
+        this.toastr.info(this.message, this.title);
+        break;
+      }
+    }
+
+  }
+
 
 }

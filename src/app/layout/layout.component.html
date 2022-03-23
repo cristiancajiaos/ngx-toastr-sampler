@@ -1,1 +1,36 @@
-<p>layout works!</p>
+<div class="row text-center">
+  <div class="col-12 col-lg-4">
+    <div class="form-group mb-3">
+      <label>Tipo de alerta</label>
+      <select class="form-control" [(ngModel)]="alertType">
+        <option *ngFor="let aType of alertTypes" [value]="aType">
+          {{aType}}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="col-12 col-lg-4">
+    <div class="form-group mb-3">
+      <label>Título de la alerta</label>
+      <input type="text" class="form-control" [(ngModel)]="title"/>
+    </div>
+  </div>
+  <div class="col-12 col-lg-4">
+    <div class="form-group mb-3">
+      <label>Texto de la alerta</label>
+      <textarea
+        class="form-control"
+        [(ngModel)]="message"
+        rows="1"
+      ></textarea>
+    </div>
+  </div>
+</div>
+
+<hr/>
+
+<div class="d-grid">
+  <button class="btn btn-primary" (click)="openAlert()">
+    Abrir alerta
+  </button>
+</div>
